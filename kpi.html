@@ -7,48 +7,60 @@
     <title>KPI</title>
 
     <style type="text/tailwindcss">
+        * {
+            font-size: 14px;
+        }
         .key-value-list li {
-            @apply flex items-center text-gray-500 font-normal;
+            @apply flex items-start text-gray-500 font-normal;
+        }
+        .key-value-list li + li {
+            @apply mt-6;
         }
         .key-value-list li > div  {
             @apply flex items-center;
         }
         .key-value-list li .left {
-            @apply w-36;
+            @apply w-36 ;
+        }
+        .key-value-list li .left p {
+            @apply font-extralight;
         }
         .key-value-list li .right {
             @apply text-black;
         }
     </style>
 </head>
-<body class="overflow-auto">
+<body class="overflow-auto aaaa">
     <button class="flex items-center top-5 right-5 bg-cyan-600 bor">Открыть  меню</button>
     <div class="p-8">Tailwind CSS</div>
 
-    <div style="width: 600px;" class="overflow-x-hidden fixed top-0 h-full m-3 right-1 z-50 rounded-lg border-red-700 border-4">
-        <div class="w-full h-full box-border">
-            <header class="flex justify-between items-center border-b border-solid border-gray-200">
-                <article class="flex items-center ml-6">
-                    <button class="mr-2 w-5 h-5 hover:scale-125">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="flex items-center rotate-90" viewBox="0 0 24 24"  fill="none">
-                            <path d="M9 15L2 22M2 22H7.85714M2 22V16.1429" stroke="rgb(125 125 145)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M15 9L22 2M22 2H16.1429M22 2V7.85714" stroke="rgb(125 125 145)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+    <div style="width: 600px; height: 97%; top: 1.5%; right: 1%" class="overflow-x-hidden fixed top-0 h-full right-1 z-50 rounded-lg border-gray-200 border">
+        <div class="w-full h-full box-border flex flex-col">
+            <header class="flex justify-between items-center border-b border-solid border-gray-200 px-6 py-3">
+                <article class="flex items-center">
+                    <button class="mr-2 w-5 h-5 text-gray-400 flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M10 22C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M10 2C6.22876 2 4.34315 2 3.17157 3.17157C2 4.34315 2 6.22876 2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M14 2C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
                     </button>
-                    <p class="text-lg text-gray-600 my-4">
-                        <span class="text-gray-300">|</span>
+                    <div class="h-5 bg-gray-200 border-0 border-l border-solid border-gray-200 mx-1.5 mr-3"></div>
+                    <p class="text-base text-gray-500 font-light">
                         Craftboard Project / On progress
                     </p>
                 </article>
                 <div class="flex justify-end items-center">
-                    <button class=" mr-2 w-5 h-5 text-gray-600 border-none bg-transparent hover:scale-125">
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" color="rgb(125 125 145)" fill="none">
+                    <button class="mr-4 w-5 h-5 text-gray-400 border-none bg-transparent flex items-center justify-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-4.5 h-4.5">
                             <path d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             <path d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9" stroke="currentColor" stroke-width="1.5"/>
+                            
                         </svg>
                     </button>
-                    <button class=" mr-2 w-5 h-5 text-gray-600 border-none bg-transparent hover:scale-125">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" color="rgb(125,125,145)" fill="none">
+                    <button class=" mr-4 w-5 h-5 text-gray-400 border-none bg-transparent  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                             <path d="M9 12C9 13.3807 7.88071 14.5 6.5 14.5C5.11929 14.5 4 13.3807 4 12C4 10.6193 5.11929 9.5 6.5 9.5C7.88071 9.5 9 10.6193 9 12Z" stroke="currentColor" stroke-width="1.5"/>
                             <path d="M14 6.5L9 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             <path d="M14 17.5L9 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -56,8 +68,8 @@
                             <path d="M19 5.5C19 6.88071 17.8807 8 16.5 8C15.1193 8 14 6.88071 14 5.5C14 4.11929 15.1193 3 16.5 3C17.8807 3 19 4.11929 19 5.5Z" stroke="currentColor" stroke-width="1.5"/>
                         </svg>
                     </button>
-                    <button class=" mr-2 w-5 h-5 border-none bg-transparent hover:scale-125">
-                        <svg xmlns="http://www.w3.org/2000/svg" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
+                    <button class="w-5 h-5 border-none bg-transparent  text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                             <circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/>
                             <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/>
                             <circle cx="19" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/>
@@ -65,153 +77,160 @@
                     </button>
                 </div>
             </header>
-            <main class="ml-6">
-                <article alt="Main text" class="text-left">
-                        <h1 class="text-3xl font-semibold my-7">KPI and Employee Statistics Page</h1>
-                </article>
-                <ul class="key-value-list">
-                    <li>
-                        <div class="left">
-                            <p class="flex items-center text-gray-500 font-normal w-36 my-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M15 10.5L12 13.5L9 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>Status</p>
-                        </div>
-                        <div class="right">
-                            <img src="icons/free-icon-circle-8775815.png" class="w-5 h-5 mr-2">
-                            <div>On Progress</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p class="flex items-center text-gray-500 font-normal w-36 my-4">     
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
-                                <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M7 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                <path d="M17 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                <circle cx="16.5" cy="16.5" r="1.5" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>Due date</p>
-                        </div>
-                        <div class="right">
-                            <div class="items-center">5 March 2024</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p class="flex items-center text-gray-500 font-normal w-36 my-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="9" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M15 9C16.6569 9 18 7.65685 18 6C18 4.34315 16.6569 3 15 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                    <ellipse cx="9" cy="17" rx="7" ry="4" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M18 14C19.7542 14.3847 21 15.3589 21 16.5C21 17.5293 19.9863 18.4229 18.5 18.8704" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>Assignee</p>
-                        </div>
-                        <div class="right">
-                            <div class="flex items-center mr-3 w-auto rounded-full bg-gray-100">
-                                <img src="icons/PF9wpZ-CH9I.jpg" class="w-7 h-7 rounded-full">
-                                <p class="flex items-center text-base text-gray-800 mx-2 ml-1.5 leading-5 -mt-0.5">Tyler Derdan</p>
+            <main class=" h-full overflow-y-auto">
+                <div class="px-6">
+                    <article alt="Main text" class="text-left">
+                        <h1 class="text-2xl font-medium my-5">KPI and Employee Statistics Page</h1>
+                    </article>
+                    <ul class="key-value-list">
+                        <li>
+                            <div class="left">
+                                <p class="flex items-center text-gray-500 font-normal w-36">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M15 10.5L12 13.5L9 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>Status</p>
                             </div>
-                            <div class="flex items-center mr-3 w-auto h-7 rounded-full pr-2 bg-green-100">
-                                <div class="w-7 h-7 rounded-full bg-green-500 text-white flex justify-center items-center text-sm">JR</div>
-                                <p class="flex items-center text-base text-gray-800 ml-1 -mt-0.5">Jo Rogan</p>
+                            <div class="right">
+                                <img src="icons/free-icon-circle-8775815.png" class="w-5 h-5 mr-2">
+                                <div>On Progress</div>
                             </div>
-                            <button class="w-auto h-7 p-2 ml-3 bg-white text-black flex items-center border border-solid border-gray-400 rounded cursor-pointer hover:scale-110">
-                                <img src="icons/free-icon-add-user-748137.png" class="w-3 h-3 mr-1">Invite</button>        
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p class="flex items-center text-gray-500 font-normal w-36 my-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
-                                    <path d="M4.72848 16.1369C3.18295 14.5914 2.41018 13.8186 2.12264 12.816C1.83509 11.8134 2.08083 10.7485 2.57231 8.61875L2.85574 7.39057C3.26922 5.59881 3.47597 4.70292 4.08944 4.08944C4.70292 3.47597 5.59881 3.26922 7.39057 2.85574L8.61875 2.57231C10.7485 2.08083 11.8134 1.83509 12.816 2.12264C13.8186 2.41018 14.5914 3.18295 16.1369 4.72848L17.9665 6.55812C20.6555 9.24711 22 10.5916 22 12.2623C22 13.933 20.6555 15.2775 17.9665 17.9665C15.2775 20.6555 13.933 22 12.2623 22C10.5916 22 9.24711 20.6555 6.55812 17.9665L4.72848 16.1369Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <circle cx="8.60724" cy="8.87891" r="2" transform="rotate(-45 8.60724 8.87891)" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M11.5417 18.5L18.5208 11.5208" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>Tags</p>
-                        </div>
-                        <div class="right">
-                            <div class="flex items-center bg-indigo-100 text-indigo-700 font-semibold rounded cursor-pointer mr-4">
-                                <svg xmlns="http://www.w3.org/2000/svg"class="w-5 h-5 ml-1 rotate-180" color="rgb(67 56 202 / var(--tw-text-opacity))" viewBox="0 0 24 24" fill="none">
-                                    <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                                <p class="m-1">Dashboard</p></div>
-                            <div class="flex items-center bg-yellow-100 text-yellow-700 font-semibold rounded cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1 " viewBox="0 0 15 15" fill="none">
-                                    <path d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z" fill="rgb(161 98 7 / var(--tw-text-opacity))"/>
-                                </svg>
-                                <p class="m-1">Medium</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p alt="Discription" class="flex items-center text-gray-500 font-normal w-36 my-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M8 12H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                    <path d="M8 8H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                    <path d="M8 16H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>Discription</p>
-                        </div>
-                        <div class="right"></div>
-                    </li>
-                    <div>
-                        <p class="inline-block p-4 border border-solid border-gray-200 rounded-lg font-normal text-lg">This page aims to provide real-time insight into employee perfomance
-                        metrics and key business indicators</p>
-                    </div>
-                    <li class="justify-between">
-                        <div class="left">
-                            <p class="flex items-center text-gray-500 font-normal w-36 my-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 " viewBox="0 0 24 24" fill="none">
-                                    <path d="M8.10692 17.4174L15.4868 10.3512C15.9348 9.92215 16.1589 9.70764 16.2759 9.47485C16.4856 9.0579 16.4856 8.5722 16.2759 8.15525C16.1589 7.92246 15.9348 7.70794 15.4868 7.27892C15.0387 6.8499 14.8147 6.63538 14.5715 6.52328C14.1361 6.32249 13.6288 6.32248 13.1934 6.52328C12.9502 6.63538 12.7262 6.8499 12.2781 7.27892L4.95178 14.2939C3.85303 15.3459 3.30366 15.872 3.11183 16.4836C2.96272 16.9591 2.96272 17.466 3.11183 17.9414C3.30366 18.5531 3.85303 19.0791 4.95178 20.1312C6.05053 21.1832 6.5999 21.7092 7.2387 21.8929C7.73526 22.0357 8.26468 22.0357 8.76124 21.8929C9.40004 21.7092 9.94941 21.1832 11.0482 20.1312L18.4815 13.0138C19.5258 12.0138 20.048 11.5138 20.3617 10.9937C21.2128 9.58216 21.2128 7.84311 20.3617 6.43161C20.048 5.91147 19.5258 5.41147 18.4815 4.41148C17.4371 3.4115 16.9149 2.9115 16.3717 2.6112C14.8975 1.79627 13.0813 1.79627 11.6071 2.6112C11.0639 2.9115 10.5417 3.4115 9.49733 4.41148L3.5079 10.1464" stroke="grey" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>Attachment (2)</p>
-                        </div>
-                        <div class="right">
-                            <div>
-                                <button class="flex items-center cursor-pointer bg-white text-blue-600 hover:underline">
-                                <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M12.5535 16.5061C12.4114 16.6615 12.2106 16.75 12 16.75C11.7894 16.75 11.5886 16.6615 11.4465 16.5061L7.44648 12.1311C7.16698 11.8254 7.18822 11.351 7.49392 11.0715C7.79963 10.792 8.27402 10.8132 8.55352 11.1189L11.25 14.0682V3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V14.0682L15.4465 11.1189C15.726 10.8132 16.2004 10.792 16.5061 11.0715C16.8118 11.351 16.833 11.8254 16.5535 12.1311L12.5535 16.5061Z" fill="rgb(37 99 235 / var(--tw-text-opacity))"/>
-                                        <path d="M3.75 15C3.75 14.5858 3.41422 14.25 3 14.25C2.58579 14.25 2.25 14.5858 2.25 15V15.0549C2.24998 16.4225 2.24996 17.5248 2.36652 18.3918C2.48754 19.2919 2.74643 20.0497 3.34835 20.6516C3.95027 21.2536 4.70814 21.5125 5.60825 21.6335C6.47522 21.75 7.57754 21.75 8.94513 21.75H15.0549C16.4225 21.75 17.5248 21.75 18.3918 21.6335C19.2919 21.5125 20.0497 21.2536 20.6517 20.6516C21.2536 20.0497 21.5125 19.2919 21.6335 18.3918C21.75 17.5248 21.75 16.4225 21.75 15.0549V15C21.75 14.5858 21.4142 14.25 21 14.25C20.5858 14.25 20.25 14.5858 20.25 15C20.25 16.4354 20.2484 17.4365 20.1469 18.1919C20.0482 18.9257 19.8678 19.3142 19.591 19.591C19.3142 19.8678 18.9257 20.0482 18.1919 20.1469C17.4365 20.2484 16.4354 20.25 15 20.25H9C7.56459 20.25 6.56347 20.2484 5.80812 20.1469C5.07435 20.0482 4.68577 19.8678 4.40901 19.591C4.13225 19.3142 3.9518 18.9257 3.85315 18.1919C3.75159 17.4365 3.75 16.4354 3.75 15Z" fill="rgb(37 99 235 / var(--tw-text-opacity))"/>
-                                </svg>Download All</button>
-                            </div>        
-                        </div>
-                    </li>
-                </ul>
-                <div alt="files" class="flex items-center mt-4">
-                    <div class="mr-2 w-auto h-16 p-2 bg-white hover:bg-gray-200 border border-solid border-gray-400 rounded-lg flex items-center justify-center text-black text-lg font-semibold cursor-pointer no-underline">
-                        <a class="flex items-center text-black" href="" download>
-                            <img class="w-10 h-10 mr-2 items-center" src="icons/free-icon-pdf-11180756.png">
-                            <div class="flex flex-col items-center mr-4">
-                                <p class="font-normal">Design brief.pdf</p>
-                                <div class="text-gray-500 font-normal text-base flex items-center">
-                                    <p>1,5 MB</p>
-                                    <p class="ml-1">Download</p>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p class="flex items-center text-gray-500 font-normal w-36">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M7 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M17 4V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        
+                                        <circle cx="16.5" cy="16.5" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>Due date</p>
+                            </div>
+                            <div class="right">
+                                <div class="items-center">5 March 2024</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p class="flex items-center text-gray-500 font-normal w-36 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="9" cy="6" r="4" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M15 9C16.6569 9 18 7.65685 18 6C18 4.34315 16.6569 3 15 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <ellipse cx="9" cy="17" rx="7" ry="4" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M18 14C19.7542 14.3847 21 15.3589 21 16.5C21 17.5293 19.9863 18.4229 18.5 18.8704" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>Assignee</p>
+                            </div>
+                            <div class="right">
+                                <div class="flex items-center mr-3 w-auto rounded-full bg-gray-100">
+                                    <img src="icons/PF9wpZ-CH9I.jpg" class="w-7 h-7 rounded-full">
+                                    <p class="flex items-center text-base text-gray-800 mx-2 ml-1.5 leading-5 -mt-0.5">Tyler Derdan</p>
+                                </div>
+                                <div class="flex items-center mr-3 w-auto h-7 rounded-full pr-2 bg-green-100">
+                                    <div class="w-7 h-7 rounded-full bg-green-500 text-white flex justify-center items-center text-sm">JR</div>
+                                    <p class="flex items-center text-base text-gray-800 ml-1 -mt-0.5">Jo Rogan</p>
+                                </div>
+                                <button class="w-auto h-7 p-2 ml-3 bg-white text-black flex items-center border border-solid border-gray-400 rounded cursor-pointer hover:scale-110">
+                                    <img src="icons/free-icon-add-user-748137.png" class="w-3 h-3 mr-1">Invite</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p class="flex items-center text-gray-500 font-normal w-36">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4.72848 16.1369C3.18295 14.5914 2.41018 13.8186 2.12264 12.816C1.83509 11.8134 2.08083 10.7485 2.57231 8.61875L2.85574 7.39057C3.26922 5.59881 3.47597 4.70292 4.08944 4.08944C4.70292 3.47597 5.59881 3.26922 7.39057 2.85574L8.61875 2.57231C10.7485 2.08083 11.8134 1.83509 12.816 2.12264C13.8186 2.41018 14.5914 3.18295 16.1369 4.72848L17.9665 6.55812C20.6555 9.24711 22 10.5916 22 12.2623C22 13.933 20.6555 15.2775 17.9665 17.9665C15.2775 20.6555 13.933 22 12.2623 22C10.5916 22 9.24711 20.6555 6.55812 17.9665L4.72848 16.1369Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="8.60724" cy="8.87891" r="2" transform="rotate(-45 8.60724 8.87891)" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M11.5417 18.5L18.5208 11.5208" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>Tags</p>
+                            </div>
+                            
+                            <div class="right">
+                                <div class="flex items-center bg-indigo-100 text-indigo-700 rounded cursor-pointer px-2 text-sm mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg"class="w-5 h-5 rotate-180 mt-0.5 mr-1" color="rgb(67 56 202 / var(--tw-text-opacity))" viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12V14C22 17.7712 22 19.6569 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V12Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M2.5 9H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <p class="m-1">Dashboard</p>
+                                </div>
+                                <div class="flex items-center bg-yellow-100 text-yellow-700 rounded cursor-pointer px-2 text-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 " viewBox="0 0 15 15" fill="none">
+                                        <path d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z" fill="rgb(161 98 7 / var(--tw-text-opacity))"/>
+                                    </svg>
+                                    <p class="m-1">Medium</p>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="mr-2 w-auto h-16 p-2 bg-white hover:bg-gray-200 border border-solid border-gray-400 rounded-lg flex items-center justify-center text-black text-lg font-semibold cursor-pointer no-underline">
-                        <a class="flex items-center text-black " href="" download>
-                            <img class="w-10 h-10 mr-2" src="icons/free-icon-pdf-11180756.png">
-                            <div class=" font-normal flex flex-col items-center mr-4">
-                                <p class="">Crafboard logo.ai</p>
-                                <div class="text-gray-500 justify-between font-normal text-base flex items-center">
-                                    <p>1,5 MB</p>
-                                    <p class="ml-1">Download</p>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p alt="Discription" class="flex items-center text-gray-500 font-normal w-36 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" color="rgb(125 125 145)" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 12H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M8 8H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M8 16H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>Discription</p>
+                            </div>
+                            <div class="right">
+                                <div class="text-gray-500 font-light">
+                                    This page aims to provide real-time insight into employee perfomance
+                                    metrics and key business indicators
                                 </div>
                             </div>
-                        </a>
+                        </li>
+                        <li class="justify-between">
+                            <div class="left">
+                                <p class="flex items-center text-gray-500 font-normal w-36 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 " viewBox="0 0 24 24" fill="none">
+                                        <path d="M8.10692 17.4174L15.4868 10.3512C15.9348 9.92215 16.1589 9.70764 16.2759 9.47485C16.4856 9.0579 16.4856 8.5722 16.2759 8.15525C16.1589 7.92246 15.9348 7.70794 15.4868 7.27892C15.0387 6.8499 14.8147 6.63538 14.5715 6.52328C14.1361 6.32249 13.6288 6.32248 13.1934 6.52328C12.9502 6.63538 12.7262 6.8499 12.2781 7.27892L4.95178 14.2939C3.85303 15.3459 3.30366 15.872 3.11183 16.4836C2.96272 16.9591 2.96272 17.466 3.11183 17.9414C3.30366 18.5531 3.85303 19.0791 4.95178 20.1312C6.05053 21.1832 6.5999 21.7092 7.2387 21.8929C7.73526 22.0357 8.26468 22.0357 8.76124 21.8929C9.40004 21.7092 9.94941 21.1832 11.0482 20.1312L18.4815 13.0138C19.5258 12.0138 20.048 11.5138 20.3617 10.9937C21.2128 9.58216 21.2128 7.84311 20.3617 6.43161C20.048 5.91147 19.5258 5.41147 18.4815 4.41148C17.4371 3.4115 16.9149 2.9115 16.3717 2.6112C14.8975 1.79627 13.0813 1.79627 11.6071 2.6112C11.0639 2.9115 10.5417 3.4115 9.49733 4.41148L3.5079 10.1464" stroke="grey" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>Attachment (2)</p>
+                            </div>
+                            <div class="right">
+                                <div>
+                                    <button class="flex items-center cursor-pointer bg-white text-blue-600 hover:underline">
+                                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12.5535 16.5061C12.4114 16.6615 12.2106 16.75 12 16.75C11.7894 16.75 11.5886 16.6615 11.4465 16.5061L7.44648 12.1311C7.16698 11.8254 7.18822 11.351 7.49392 11.0715C7.79963 10.792 8.27402 10.8132 8.55352 11.1189L11.25 14.0682V3C11.25 2.58579 11.5858 2.25 12 2.25C12.4142 2.25 12.75 2.58579 12.75 3V14.0682L15.4465 11.1189C15.726 10.8132 16.2004 10.792 16.5061 11.0715C16.8118 11.351 16.833 11.8254 16.5535 12.1311L12.5535 16.5061Z" fill="rgb(37 99 235 / var(--tw-text-opacity))"/>
+                                            <path d="M3.75 15C3.75 14.5858 3.41422 14.25 3 14.25C2.58579 14.25 2.25 14.5858 2.25 15V15.0549C2.24998 16.4225 2.24996 17.5248 2.36652 18.3918C2.48754 19.2919 2.74643 20.0497 3.34835 20.6516C3.95027 21.2536 4.70814 21.5125 5.60825 21.6335C6.47522 21.75 7.57754 21.75 8.94513 21.75H15.0549C16.4225 21.75 17.5248 21.75 18.3918 21.6335C19.2919 21.5125 20.0497 21.2536 20.6517 20.6516C21.2536 20.0497 21.5125 19.2919 21.6335 18.3918C21.75 17.5248 21.75 16.4225 21.75 15.0549V15C21.75 14.5858 21.4142 14.25 21 14.25C20.5858 14.25 20.25 14.5858 20.25 15C20.25 16.4354 20.2484 17.4365 20.1469 18.1919C20.0482 18.9257 19.8678 19.3142 19.591 19.591C19.3142 19.8678 18.9257 20.0482 18.1919 20.1469C17.4365 20.2484 16.4354 20.25 15 20.25H9C7.56459 20.25 6.56347 20.2484 5.80812 20.1469C5.07435 20.0482 4.68577 19.8678 4.40901 19.591C4.13225 19.3142 3.9518 18.9257 3.85315 18.1919C3.75159 17.4365 3.75 16.4354 3.75 15Z" fill="rgb(37 99 235 / var(--tw-text-opacity))"/>
+                                        </svg>Download All</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div alt="files" class="flex items-center mt-4">
+                        <div class="mr-4 w-auto px-2.5 py-1.5 pr-3 bg-white hover:bg-gray-100 border border-solid border-gray-200 rounded-lg flex items-center justify-center text-black text-lg cursor-pointer no-underline">
+                            <a class="flex items-center text-black" href="" download>
+                                <img class="w-9 h-9 mr-2 items-center" src="icons/free-icon-pdf-11180756.png">
+                                <div class="flex flex-col leading-5">
+                                    <p class="font-normal m-0">Design brief.pdf</p>
+                                    <div class="text-gray-500 font-normal flex items-center mt-0.5">
+                                        <p class="m-0 font-light text-sm">1,5 MB</p>
+                                        <p class="m-0 ml-1 font-light text-sm">Download</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mr-4 w-auto px-2.5 py-1.5 pr-3 bg-white hover:bg-gray-100 border border-solid border-gray-200 rounded-lg flex items-center justify-center text-black text-lg cursor-pointer no-underline">
+                            <a class="flex items-center text-black" href="" download>
+                                <img class="w-9 h-9 mr-2 items-center" src="icons/free-icon-pdf-11180756.png">
+                                <div class="flex flex-col leading-5">
+                                    <p class="font-normal m-0">Crafboard logo.ai</p>
+                                    <div class="text-gray-500 font-normal flex items-center mt-0.5">
+                                        <p class="m-0 font-light text-sm">1,5 MB</p>
+                                        <p class="m-0 ml-1 font-light text-sm">Download</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="mr-4 w-auto px-2.5 py-1.5 pr-3 bg-white hover:bg-gray-100 border border-solid border-gray-200 rounded-lg flex items-center justify-center text-black text-lg cursor-pointer no-underline">
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                    <a class=" w-16 h-16 border border-solid border-gray-400 rounded-lg flex items-center justify-center bg-white-100 hover:bg-gray-200 cursor-pointer">
-                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
                 </div>
-                </div>
-                <div alt="Menu" class="-ml-6 flex items-center justify-start mt-9 border-b border-solid border-gray-300">
+                <div alt="Menu" class="px-6 flex items-center justify-start mt-9 border-b border-solid border-gray-300">
                     <button class="ml-6 flex items-center text-2xl h-16 text-black text-left bg-white border-gray-500  pb-1 border-b-2 transition-border duration-100">Subtasks</button>
                     <div class="flex items-center">
                         <button class="ml-6 flex items-center text-2xl h-16 text-gray-600 text-left bg-white border-white hover:border-gray-500 hover:text-black pb-1 hover:border-b-2 transition-border duration-100">Comments</button>
@@ -219,62 +238,65 @@
                     </div>
                     <button class="ml-6 flex items-center text-2xl h-16 text-gray-600 text-left bg-white border-white hover:border-gray-500 hover:text-black pb-1 hover:border-b-2 transition-border duration-100">Activities</button>
                 </div>
-                <div alt="odp" class="flex items-center justify-between">
-                    <p class="font-semibold text-2xl my-6">Our Design Process</p>
-                    <p class="text-xl text-gray-500 mr-4"><img src="">2/4</p>
-                </div>
-                <div alt="tasks" class="block">
-                    <div class="block items-center border border-gray-400 rounded-lg p-4 mb-6 mr-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
-                                    <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
-                                </button>                                
-                                <p class="flex items-center text-xl font-medium my-5">Understanding client design brief</p>
+                <div class="px-5">
+                    <div alt="odp" class="flex items-center justify-between">
+                        <p class="font-medium text-2xl my-6 text-black">Our Design Process</p>
+                        <p class="text-xl text-gray-500 mr-4"><img src="">2/4</p>
+                    </div>
+                    <div alt="tasks" class="block">
+                        <div class="block items-center border border-gray-200 rounded-lg p-4 mb-6 mr-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
+                                        <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
+                                    </button>                                
+                                    <p class="flex items-center text-xl font-medium my-2">Understanding client design brief</p>
+                                </div>
+                            </div>
+                            <p class=" block items-center text-base font-medium max-w-xl w-auto h-auto ml-10 px-4 py-2 border border-gray-200 rounded bg-gray-100">Blocker: The brief from client was not clear sо it took time to understand it</p>
+                        </div>
+                        <div class="block items-center border border-gray-200 rounded-lg p-4 mb-6 mr-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
+                                        <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
+                                    </button>  
+                                    <p class="flex items-center text-xl font-medium my-2">Collect moodboards about KPI programs</p>
+                                </div>
                             </div>
                         </div>
-                        <p class=" block items-center text-base font-medium max-w-xl w-auto h-auto  ml-10 -mt-1px px-4 py-2 border border-gray-300 rounded bg-gray-100">Blocker: The brief from client was not clear sо it took time to understand it</p>
-                    </div>
-                    <div class="block items-center border border-gray-400 rounded-lg p-4 mb-6 mr-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
-                                    <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
-                                </button>  
-                                <p class="flex items-center text-xl font-medium my-5">Collect moodboards about KPI programs</p>
+                        <div class="block items-center border border-gray-200 rounded-lg p-4 mb-6 mr-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
+                                        <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
+                                    </button>                                
+                                    <p class="flex items-center text-xl font-medium my-2">Meeting & Mind Mapping with Tyler</p>
+                                </div>
+                                <div class="flex items-center">
+                                    
+                                    <img src="icons/PF9wpZ-CH9I.jpg" class="-mr-2 w-7 h-7 rounded-full bg-green-500 text-white flex justify-center items-center text-sm">
+                                    <div class="w-7 h-7 rounded-full border-white border-2 bg-green-500 text-white flex justify-center items-center text-sm tasks">JR</div>
+                                </div>
                             </div>
+                            <p class="mt items-center text-base font-medium max-w-xl w-auto h-auto block ml-10 -mt-1px px-4 py-2 border border-gray-300 rounded bg-gray-100">Note: Some employees have different KPI cases</p>
                         </div>
-                    </div>
-                    <div class="block items-center border border-gray-400 rounded-lg p-4 mb-6 mr-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
-                                    <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
-                                </button>                                
-                                <p class="flex items-center text-xl font-medium my-5">Meeting & Mind Mapping with Tyler</p>
-                            </div>
-                            <div class="flex items-center">
-                                <img src="icons/PF9wpZ-CH9I.jpg" class="-mr-2 w-7 h-7 rounded-full bg-green-500 text-white flex justify-center items-center text-sm">
-                                <div class="w-7 h-7 rounded-full border-white border-2 bg-green-500 text-white flex justify-center items-center text-sm tasks">JR</div>
-                            </div>
-                        </div>
-                        <p class="mt items-center text-base font-medium max-w-xl w-auto h-auto block ml-10 -mt-1px px-4 py-2 border border-gray-300 rounded bg-gray-100">Note: Some employees have different KPI cases</p>
-                    </div>
-                    <div class="block items-center border border-gray-400 rounded-lg p-4 mb-6 mr-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
-                                    <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
-                                </button>                                
-                                <p class="flex items-center text-xl font-medium my-5">Wireframing and Creating alternative versions</p>
-                            </div>
-                            <div class="flex items-center">
-                                </button>                                
-                                    <svg class="w-7 h-7 fill-current text-gray-600 hover:scale-125" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                                <button class="bg-white border-none cursor-pointer hover:scale-125"><img class="w-12 h-12" src="icons/free-icon-six-dots-8278361.png"></button>
+                        <div class="block items-center border border-gray-200 rounded-lg p-4 mb-6 mr-2">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <button class="check inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative">
+                                        <span class="checked-icon hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">✓</span>
+                                    </button>                                
+                                    <p class="flex items-center text-xl font-medium my-5">Wireframing and Creating alternative versions</p>
+                                </div>
+                                <div class="flex items-center">
+                                    </button>                                
+                                        <svg class="w-7 h-7 fill-current text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                    <button class="bg-white border-none cursor-pointer"><img class="w-12 h-12" src="icons/free-icon-six-dots-8278361.png"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
