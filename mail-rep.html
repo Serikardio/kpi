@@ -83,6 +83,29 @@
                 </button>
             </div>
 
+
+            <script>
+                const btn2 = document.querySelector('.btn2');
+                const btn1 = document.querySelector('.btn1');
+                const btn3 = document.querySelector('.btn3');
+            
+                btn2.addEventListener('focus', () => {
+                    btn1.classList.add('focused');
+                    btn3.classList.remove('focused');
+                });
+            
+                btn2.addEventListener('blur', () => {
+                    btn1.classList.remove('focused');
+                    btn3.classList.remove('focused');
+                });
+            </script>
+            <style>
+                .focused {
+                    /* Ваши стили для элемента, который находится выше */
+                    border-right: 1px solid blue;
+                }
+            </style>
+
             <!-- enter-zone -->
             <div class="max-w mx-auto relative mb-8">
                 <input type="email" id="email" name="email" autocomplete="email" required
