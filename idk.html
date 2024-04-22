@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        * {
+            font-size: 14px;
+        }
+        .key-value-list li {
+            @apply flex items-start font-normal;
+        }
+        .key-value-list li > div  {
+            @apply flex items-center;
+        }
+        .key-value-list li .left {
+            @apply font-medium text-gray-500 w-28;
+        }
+        .key-value-list li .right {
+            @apply font-medium text-black;
+        }
+        .key-value-list li + li {
+            @apply mt-4;
+        }
+    </style>    
+</head>
+<body class="bg-blue-50">
+    <div style="" class="">
+        <div style="width: 600px; height: 100vh;" class="border rounded-lg bg-white border-gray-200">
+            <!-- header -->
+            <div class="px-5 py-2 border-b border-gray-200 flex items-center justify-between">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="flex items-center">
+                    <button class="flex items-center border rounded-md border-blue-500 p-1 mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500 mr-1" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="text-blue-500">
+                            Mark Completed
+                        </p>
+                    </button>
+                    <button class="flex items-center border rounded-md border-gray-300 py-1 px-3">
+                        <p>
+                            Edit
+                        </p>
+                    </button>
+                </div>
+            </div>
+            <!-- info -->
+            <div class="p-5 border-b border-gray-200">
+                <ul class="key-value-list">
+                    <div class="flex">
+                        <p class="font-medium">
+                            Sample 2
+                        </p>
+                    </div>
+                    <li>
+                        <div class="left">
+                            <p>Order</p>
+                        </div>
+                        <div class="right">
+                            <p>#80149 - Summer Linen Jacked SS22</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <p>Stage</p>
+                        </div>
+                        <div class="right">
+                            <div class="w-4 h-4 rounded mr-2 bg-orange-500">
+                            </div>
+                            <p>Prototyping</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <p>Timeline</p>
+                        </div>
+                        <div class="right">
+                            <p>16/08/2022 - 31/08/2022</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <p>Status</p>
+                        </div>
+                        <div class="right">
+                            <div class="flex items-center justify-center border rounded-3xl px-3 py-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3M12 21V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <p>In progress</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- add-comm -->
+            <div class="p-5">
+                <div class="flex items-center justify-center">
+                    <input type="text" id="messageInput" class="w-full rounded-lg p-4 border placeholder-gray-500 focus:outline-none focus:border-blue-500" placeholder="Add a comment. Use @ to mention.">
+                </div>
+            </div>
+            <!-- way -->
+            <div class="p-4">
+                <div class="flex items-center">
+                    <div class="w-2/4 mr-1 h-px bg-black"></div>
+                    <div class="flex items-center justify-center w-24">JUNE 27TH</div>
+                    <div class="w-2/4 ml-1 h-px bg-black"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
