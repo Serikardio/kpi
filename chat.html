@@ -7,6 +7,9 @@
     <title>Chat</title>
     
     <style type="text/tailwindcss">
+        * {
+            font-size: 14px;
+        }
         .right{
             @apply ml-auto bg-blue-100 p-2 px-3 pr-5 mb-4 rounded-br-none rounded-xl h-auto w-auto max-w-xs;
         }
@@ -26,10 +29,10 @@
         <div style="width: 370px;" class="border rounded-lg bg-white border-gray-200">
             
             <!-- head -->
-            <div class="flex items-center justify-between px-5 pt-4 pb-3 border-b border-gray-100">
+            <div class="flex items-center justify-between px-4 pt-4 pb-3 border-b border-gray-100">
                 <div class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 rounded-full" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256"><path fill="#1F8DED" d="M221.867 140.748a8.534 8.534 0 0 1-17.067 0V64a8.534 8.534 0 0 1 17.067 0v76.748zm-2.978 53.413c-1.319 1.129-32.93 27.655-90.889 27.655-57.958 0-89.568-26.527-90.887-27.656a8.535 8.535 0 0 1-.925-12.033 8.53 8.53 0 0 1 12.013-.942c.501.42 28.729 23.563 79.8 23.563 51.712 0 79.503-23.31 79.778-23.545 3.571-3.067 8.968-2.655 12.033.925a8.534 8.534 0 0 1-.923 12.033zM34.133 64A8.534 8.534 0 0 1 51.2 64v76.748a8.534 8.534 0 0 1-17.067 0V64zm42.668-17.067a8.534 8.534 0 0 1 17.066 0v114.001a8.534 8.534 0 0 1-17.066 0v-114zm42.666-4.318A8.532 8.532 0 0 1 128 34.082a8.532 8.532 0 0 1 8.534 8.533v123.733a8.534 8.534 0 0 1-17.067 0V42.615zm42.667 4.318a8.534 8.534 0 0 1 17.066 0v114.001a8.534 8.534 0 0 1-17.066 0v-114zM224 0H32C14.327 0 0 14.327 0 32v192c0 17.672 14.327 32 32 32h192c17.673 0 32-14.328 32-32V32c0-17.673-14.327-32-32-32z"/></svg>
-                    <p class="font-medium ">
+                    <p class="font-medium text-sm">
                         Intercom Action
                     </p>
                 </div>
@@ -87,7 +90,7 @@
                         <path id="Vector" d="M7.50977 19.8018C8.83126 20.5639 10.3645 21 11.9996 21C16.9702 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 13.6351 3.43604 15.1684 4.19819 16.4899L4.20114 16.495C4.27448 16.6221 4.31146 16.6863 4.32821 16.7469C4.34401 16.804 4.34842 16.8554 4.34437 16.9146C4.34003 16.9781 4.3186 17.044 4.27468 17.1758L3.50586 19.4823L3.50489 19.4853C3.34268 19.9719 3.26157 20.2152 3.31938 20.3774C3.36979 20.5187 3.48169 20.6303 3.62305 20.6807C3.78482 20.7384 4.02705 20.6577 4.51155 20.4962L4.51758 20.4939L6.82405 19.7251C6.95537 19.6813 7.02214 19.6591 7.08559 19.6548C7.14475 19.6507 7.19578 19.6561 7.25293 19.6719C7.31368 19.6887 7.37783 19.7257 7.50563 19.7994L7.50977 19.8018Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </g>
                     </svg>
-                    <p class="font-medium">
+                    <p class="font-medium text-sm">
                         Comments
                     </p>
                 </button>
@@ -96,10 +99,10 @@
             <div style="height: 500px;" class="p-4 flex flex-col overflow-y-auto">
                 <div class="left">
                     <div class="flex items-center mb-1">
-                        <div class="font-medium mr-2">
+                        <div class="font-medium text-sm mr-2">
                             John Doe
                         </div>
-                        <div class="text-gray-600 text-xs">
+                        <div class="text-gray-600 text-xs font-light">
                             1 hour ago
                         </div>
                     </div>
@@ -113,10 +116,10 @@
                 
                 <div class="right">
                     <div class="flex items-center mb-1">
-                        <div class="font-medium mr-2">
+                        <div class="font-medium text-sm mr-2">
                             Jony Jostar
                         </div>
-                        <div class="text-gray-600 text-xs">
+                        <div class="text-gray-600 text-xs font-light">
                             1 hour ago
                         </div>
                     </div>
@@ -128,10 +131,10 @@
                 </div>
                 <div class="left">
                     <div class="flex items-center mb-1">
-                        <div class="font-medium mr-2">
+                        <div class="font-medium text-sm mr-2">
                             John Doe
                         </div>
-                        <div class="text-gray-600 text-xs">
+                        <div class="text-gray-600 text-xs font-light">
                             1 hour ago
                         </div>
                     </div>
