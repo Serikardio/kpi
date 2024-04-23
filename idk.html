@@ -24,6 +24,21 @@
         .key-value-list li + li {
             @apply mt-4;
         }
+
+        .input-container {
+        position: relative;
+        }
+
+        .input-field {
+            @apply w-full px-4 py-2 flex items-center justify-center rounded-lg border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500;
+        }
+
+        .inner-addon {
+            @apply absolute flex items-center justify-center right-3 top-1/2 transform -translate-y-1/2 ;
+        }
+        .inner-addon button {
+            @apply bg-gray-300 w-8 h-8 rounded-full flex items-center  justify-center border-none cursor-pointer;
+        }
     </style>    
 </head>
 <body class="bg-blue-50">
@@ -103,23 +118,107 @@
             </div>
             <!-- add-comm -->
             <div class="p-7">
-                <div class="flex items-center justify-center">
-                    <input type="text" id="messageInput" class="w-full rounded-lg p-4 border border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Add a comment. Use @ to mention.">
-                    
+                <div class="input-container">
+                    <input type="text" id="messageInput" class="input-field" placeholder="Add a comment. Use @ to mention.">
+                    <div class="inner-addon">
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="h-4 w-4" fill="white" viewBox="0 0 976.051 976.05" xml:space="preserve">
+                                <g>
+                                    <path d="M572.875,51.326L572.875,51.326c-12.8-12.8-28.6-22.6-45.6-28.5c-4.9-1.7-10-3.1-15.101-4.2c-22.5-4.8-46.6-2.6-68,5.8   c-15.3,6-29.3,15.2-41,26.9l0,0l-368,368c-46.899,46.899-46.899,122.8,0,169.699c46.9,46.9,122.801,46.9,169.7,0l163.1-163.1v414   c0,66.3,53.7,120,120,120c66.301,0,120-53.7,120-120v-414l163.101,163.1c23.399,23.4,54.1,35.101,84.899,35.101   c30.801,0,61.4-11.7,84.9-35.101c46.9-46.899,46.9-122.8,0-169.699L572.875,51.326z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
             <!-- way -->
             <div class="p-7">
-                <div class="flex items-center">
+                <div class="flex items-center mb-6">
                     <div class="w-2/4 mr-1 h-px bg-gray-300"></div>
                     <div class="flex items-center font-medium text-gray-600 justify-center w-24">JUNE 27TH</div>
                     <div class="w-2/4 ml-1 h-px bg-gray-300"></div>
                 </div>
-                
-                <div class="border-l border-red-500 p-4">
+                <img src="icons/PF9wpZ-CH9I.jpg" alt="Karen" class="absolute w-8 h-8 content-center rounded-full">
+                <div class="border-l border-red-500 pl-6 pb-4 ml-4 mb-1">
+                    <div class="">
+                        <p class="font-medium text-lg">Karen Wasmund</p>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class=" text-gray-500">
+                            Replied 6h ago.Visible to team only
+                        </p>
+                    </div>
+                    <div class="flex bg-gray-100 rounded px-2 py-3 mb-4">
+                        <div class="mr-1 text-blue-500">@Johns</div>Lorem ipsum dolor sit amet,consectetur adipiscing elit
+                    </div>
+                    <div>
+                        <button class="border p-2 rounded">
+                            Reply 
+                        </button>
+                    </div>
                 </div>
-
-                <div>
+                <div class="absolute bg-gray-300 p-1 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class=" w-6 h-6 fill-gray-500" viewBox="0 0 40 40" xml:space="preserve">
+                        <g>
+                            <path d="M20,0C8.974,0,0,8.973,0,20c0,11.027,8.974,20,20,20c11.029,0,20-8.973,20-20C40,8.973,31.029,0,20,0z M28.818,17.875   l-8.562,8.564c-0.596,0.595-1.377,0.893-2.158,0.893c-0.779,0-1.561-0.298-2.156-0.893l-4.758-4.758   c-1.191-1.191-1.191-3.124,0-4.313c1.191-1.192,3.121-1.192,4.314,0l2.6,2.6l6.408-6.407c1.188-1.189,3.123-1.189,4.312,0   C30.01,14.752,30.01,16.684,28.818,17.875z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="border-l border-red-500 pl-6 pb-4 ml-4 mb-1 h-14">
+                    <div class="flex items-center">
+                        <div>
+                            <p class="font-medium text-lg mr-1">
+                                Factory Toor SAS
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 mr-1">moved status to</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center border rounded-3xl px-3 mr-1">
+                                <div class="w-2 h-2 rounded-full mr-2 bg-blue-400"></div>
+                                <p class="font-medium">In production</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 mr-1">9h ago</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-300 rounded-full p-1 w-min">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class=" w-6 h-6 fill-gray-500" viewBox="0 0 40 40" xml:space="preserve">
+                        <g>
+                            <path d="M20,0C8.974,0,0,8.973,0,20c0,11.027,8.974,20,20,20c11.029,0,20-8.973,20-20C40,8.973,31.029,0,20,0z M28.818,17.875   l-8.562,8.564c-0.596,0.595-1.377,0.893-2.158,0.893c-0.779,0-1.561-0.298-2.156-0.893l-4.758-4.758   c-1.191-1.191-1.191-3.124,0-4.313c1.191-1.192,3.121-1.192,4.314,0l2.6,2.6l6.408-6.407c1.188-1.189,3.123-1.189,4.312,0   C30.01,14.752,30.01,16.684,28.818,17.875z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="border-l border-red-500 pl-6 pb-4 ml-4 mb-1">
+                    <div class="">
+                        <div class="flex items-center mb-2">
+                            <div>
+                                <p class="font-medium text-lg mr-1">
+                                    Factory Toor SAS
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 mr-1">moved status to</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div>
+                                <div class="flex items-center border rounded-3xl px-3 mr-1">
+                                    <div class="w-2 h-2 rounded-full mr-2 bg-blue-400"></div>
+                                    <p class="font-medium">Pre-production check</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 mr-1">2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
