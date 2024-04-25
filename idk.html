@@ -34,19 +34,35 @@
         }
 
         .inner-addon {
-            @apply absolute flex items-center justify-center right-3 top-1/2 transform -translate-y-1/2 ;
+            @apply  absolute flex items-center justify-center right-3 top-1/2 transform -translate-y-1/2 ;
         }
         .inner-addon button {
             @apply bg-gray-200 w-7 h-7 rounded-full flex items-center  justify-center border-none cursor-pointer;
         }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px; /* Ширина полосы прокрутки */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f100; /* Цвет фона трека */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #88888800; /* Цвет ползунка */
+            border-radius: 5px; /* Скругление углов ползунка */
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #55555500; /* Цвет ползунка при наведении */
+        }
     </style>    
 </head>
-<body class="bg-blue-50 flex">
+<body class="bg-blue-50 flex overscroll-none overflow-hidden">
     <!-- first List -->
-    <div  class="">
-        <div style="width: 550px; height: 100vh;" class="border rounded-l-lg bg-white border-gray-200">
+    <div class="overflow-auto overflow-x-hidden">
+        <div style="width: 550px; height: auto;" class="border rounded-l-lg bg-white border-gray-200">
             <!-- header -->
-            <div class="px-7 py-3 border-b border-gray-200 flex items-center justify-between">
+            <div class="px-7 py-3 border-b overflow-x-hidden border-gray-200 flex items-center justify-between">
                 <div class="hover:cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
                         <path d="M20 4V20M4 12H16M16 12L12 8M16 12L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -69,313 +85,317 @@
                 </div>
             </div>
             <!-- info -->
-            <div class="p-7 border-b border-gray-200">
-                <ul class="key-value-list">
-                    <div class="flex">
-                        <p class="font-medium text-2xl mb-4">
-                            Sample 2
-                        </p>
-                    </div>
-                    <li>
-                        <div class="left">
-                            <p>Order</p>
-                        </div>
-                        <div class="right">
-                            <p>#80149 - Summer Linen Jacked SS22</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p>Stage</p>
-                        </div>
-                        <div class="right">
-                            <div class="w-4 h-4 rounded mr-2 bg-orange-400">
-                            </div>
-                            <p>Prototyping</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p>Timeline</p>
-                        </div>
-                        <div class="right">
-                            <p>16/08/2022 - 31/08/2022</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="left">
-                            <p>Status</p>
-                        </div>
-                        <div class="right">
-                            <div class="flex items-center border rounded-3xl px-2 h-7">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3M12 21V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <p class="py-2">In progress</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- add-comm -->
-            <div class="px-7 pt-7">
-                <div class="input-container">
-                    <input type="text" id="messageInput" class="input-field" placeholder="Add a comment. Use @ to mention.">
-                    <div class="inner-addon">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="h-3 w-3" fill="white" viewBox="0 0 976.051 976.05" xml:space="preserve">
-                                <g>
-                                    <path d="M572.875,51.326L572.875,51.326c-12.8-12.8-28.6-22.6-45.6-28.5c-4.9-1.7-10-3.1-15.101-4.2c-22.5-4.8-46.6-2.6-68,5.8   c-15.3,6-29.3,15.2-41,26.9l0,0l-368,368c-46.899,46.899-46.899,122.8,0,169.699c46.9,46.9,122.801,46.9,169.7,0l163.1-163.1v414   c0,66.3,53.7,120,120,120c66.301,0,120-53.7,120-120v-414l163.101,163.1c23.399,23.4,54.1,35.101,84.899,35.101   c30.801,0,61.4-11.7,84.9-35.101c46.9-46.899,46.9-122.8,0-169.699L572.875,51.326z"/>
-                                </g>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- way -->
-            <div class="p-7">
-                <div class="flex items-center mb-6">
-                    <div class="w-2/4 mr-1 h-px bg-gray-300"></div>
-                    <div class="flex items-center font-medium text-gray-600 justify-center w-24">JUNE 27TH</div>
-                    <div class="w-2/4 ml-1 h-px bg-gray-300"></div>
-                </div>
-                <img src="icons/PF9wpZ-CH9I.jpg" alt="Karen" class="absolute w-8 h-8 content-center rounded-full">
-                <div class="border-l-2 border-gray-300 pl-6 pb-4 ml-4 mb-1">
-                    <div class="">
-                        <p class="font-medium">Karen Wasmund</p>
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <p class=" text-gray-400">
-                            Replied 6h ago. Visible to team only
-                        </p>
-                    </div>
-                    <div class="flex bg-gray-100 rounded px-2 py-3 mb-4">
-                        <div class="mr-1 text-blue-500 font-medium">@Johns</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </div>
-                    <div>
-                        <button class="border px-2 text-sm font-medium py-1 w-16 rounded">
-                            Reply 
-                        </button>
-                    </div>
-                </div>
-                <div class="absolute flex items-center justify-center border-4 border-white bg-gray-200 w-9 h-9 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="border-l-2 border-gray-300 pl-6 pb-4 ml-4 mb-1 h-14">
-                    <div class="flex items-center">
-                        <div>
-                            <p class="font-medium mr-2">
-                                Factory Toor SAS
+            <div style="width: 550px; height: 750px;" class=" custom-scrollbar overflow-auto ">
+                <div class=" p-7 border-b  border-gray-200">
+                    <ul class="key-value-list">
+                        <div class="flex">
+                            <p class="font-medium text-2xl mb-4">
+                                Sample 2
                             </p>
                         </div>
-                        <div>
-                            <p class="text-gray-400  mr-2">moved status to</p>
-                        </div>
-                        <div >
-                            <div class="flex items-center border rounded-3xl px-2 h-7 mr-2">
-                                <div class="w-2 h-2 rounded-full mr-2 bg-blue-400"></div>
-                                <p class="font-medium">In production</p>
+                        <li>
+                            <div class="left">
+                                <p>Order</p>
                             </div>
-                        </div>
-                        <div>
-                            <p class="text-gray-400 mr-1">9h ago</p>
+                            <div class="right">
+                                <p>#80149 - Summer Linen Jacked SS22</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p>Stage</p>
+                            </div>
+                            <div class="right">
+                                <div class="w-4 h-4 rounded mr-2 bg-orange-400">
+                                </div>
+                                <p>Prototyping</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p>Timeline</p>
+                            </div>
+                            <div class="right">
+                                <p>16/08/2022 - 31/08/2022</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <p>Status</p>
+                            </div>
+                            <div class="right">
+                                <div class="flex items-center border rounded-3xl px-2 h-7">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3M12 21V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <p class="py-2 -mt-0.5">In progress</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- add-comm -->
+                <div class="px-7 pt-7">
+                    <div class="input-container">
+                        <input type="text" id="messageInput" class="input-field" placeholder="Add a comment. Use @ to mention.">
+                        <div class="inner-addon">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="h-3 w-3" fill="white" viewBox="0 0 976.051 976.05" xml:space="preserve">
+                                    <g>
+                                        <path d="M572.875,51.326L572.875,51.326c-12.8-12.8-28.6-22.6-45.6-28.5c-4.9-1.7-10-3.1-15.101-4.2c-22.5-4.8-46.6-2.6-68,5.8   c-15.3,6-29.3,15.2-41,26.9l0,0l-368,368c-46.899,46.899-46.899,122.8,0,169.699c46.9,46.9,122.801,46.9,169.7,0l163.1-163.1v414   c0,66.3,53.7,120,120,120c66.301,0,120-53.7,120-120v-414l163.101,163.1c23.399,23.4,54.1,35.101,84.899,35.101   c30.801,0,61.4-11.7,84.9-35.101c46.9-46.899,46.9-122.8,0-169.699L572.875,51.326z"/>
+                                    </g>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="absolute flex items-center justify-center border-4 border-white bg-gray-200 w-9 h-9 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="border-l-2 border-gray-300 pl-6 pb-4 ml-4 mb-2">
-                    <div class="">
+                <!-- way -->
+                <div class="p-7">
+                    <div class="flex items-center mb-6">
+                        <div class="w-5/12 pr-1 h-px bg-gray-300"></div>
+                        <div class="flex items-center font-medium text-gray-600 justify-center w-24">JUNE 27TH</div>
+                        <div class="w-5/12 pl-1 h-px bg-gray-300"></div>
+                    </div>
+                    <img src="icons/PF9wpZ-CH9I.jpg" alt="Karen" class="-mb-8 w-8 h-8 content-center rounded-full">
+                    <div style="margin-left: 15px;" class="border-l-2 border-gray-300 pl-6 pb-4 ml-4">
+                        <div class="">
+                            <p class="font-medium">Karen Wasmund</p>
+                        </div>
                         <div class="flex items-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p class=" text-gray-400 text-sm">
+                                Replied 6h ago. Visible to team only
+                            </p>
+                        </div>
+                        <div class="flex bg-gray-100 rounded px-2 py-3 mb-2">
+                            <div class="mr-1 text-blue-500 font-medium">@Johns</div>Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        </div>
+                        <div>
+                            <button class="border px-2 text-sm font-medium py-1 w-16 rounded">
+                                Reply 
+                            </button>
+                        </div>
+                    </div>
+                    <div class="-mb-8 flex items-center justify-center relative border-4 border-white bg-gray-200 z-20 w-9 h-9 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div style="margin-left: 15px;" class="border-l-2 border-gray-300 pl-6 pb-4 h-14">
+                        <div class="flex items-center">
                             <div>
                                 <p class="font-medium mr-2">
                                     Factory Toor SAS
                                 </p>
                             </div>
                             <div>
-                                <p class="text-gray-400">moved status to</p>
+                                <p class="text-gray-400 mr-2">moved status to</p>
                             </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div>
+                            <div >
                                 <div class="flex items-center border rounded-3xl px-2 h-7 mr-2">
-                                    <div class="w-2 h-2 rounded-full mr-2 bg-blue-400"></div>
-                                    <p class="font-medium">Pre-production check</p>
+                                    <div class="w-2 h-2 rounded-full mr-2 bg-blue-400 -mt-0.5"></div>
+                                    <p class="font-medium -mt-0.5">In production</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="text-gray-400 ">2 days ago</p>
+                                <p class="text-gray-400">9h ago</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <img src="icons/PF9wpZ-CH9I.jpg" alt="Preston" class="absolute w-8 h-8 content-center rounded-full">
-                <div class="pl-6 pb-4 ml-4 mb-1">
-                    <div class="">
-                        <p class="font-medium">Preston Roling</p>
+                    <div class="-mb-8 flex items-center justify-center relative z-20 border-4 border-white bg-gray-200 w-9 h-9 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.0243 14.3899C11.4586 14.9556 10.5414 14.9556 9.97568 14.3899L8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929C8.68342 10.9024 9.31658 10.9024 9.70711 11.2929L11 12.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289Z" fill="currentColor"/>
+                        </svg>
                     </div>
-                    <div class="flex items-center mb-2">
-                        <div class="text-blue-500 font-medium mr-2">
-                            @ Factory Toor SAS
+                    <div style="margin-left: 15px;" class="border-l-2 border-gray-300 pl-6 pb-4 ml-4">
+                        <div class="">
+                            <div class="flex items-center mb-2">
+                                <div>
+                                    <p class="font-medium mr-2">
+                                        Factory Toor SAS
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">moved status to</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div>
+                                    <div class="flex items-center border rounded-3xl px-2 h-7 mr-2">
+                                        <div class="w-2 h-2 rounded-full mr-2 -mt-0.5 bg-blue-400"></div>
+                                        <p class="font-medium -mt-0.5">Pre-production check</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 ">2 days ago</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-gray-400">
-                            4 days ago
-                        </p>
                     </div>
-                    <div class="flex py-1 mb-4 text-lg text-gray-700">
-                        Lorem ipsum dolor mack laren, consleted addipising edit.<br>
-                        Tincilin nuns ipsum templor purus aquas vita id.<br>
-                        Morbi in westibulium nec virus. Et diamcurcus quis sed purus nam.
-                    </div>
-                    <div>
-                        <button class="border px-2 py-1 w-16 text-sm font-medium rounded">
-                            Reply 
-                        </button>
+                    <img src="icons/PF9wpZ-CH9I.jpg" alt="Preston" class=" -mb-8 w-8 h-8 content-center rounded-full">
+                    <div class="pl-6 pb-4 ml-4 mb-10">
+                        <div class="">
+                            <p class="font-medium">Preston Roling</p>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="text-blue-500 font-medium mr-2">
+                                @ Factory Toor SAS
+                            </div>
+                            <p class="text-gray-400">
+                                4 days ago
+                            </p>
+                        </div>
+                        <div class="flex py-1 mb-4 text-lg text-gray-700">
+                            Lorem ipsum dolor mack laren, consleted addipising edit.<br>
+                            Tincilin nuns ipsum templor purus aquas vita id.<br>
+                            Morbi in westibulium nec virus. Et diamcurcus quis sed purus nam.
+                        </div>
+                        <div>
+                            <button class="border px-2 py-1 w-16 text-sm font-medium rounded">
+                                Reply 
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Second List -->
-    <div style="width: 300px; height: 100vh; ;" class="border border-l-0 rounded-r-lg py-6 px-4 bg-gray-100 border-gray-200">
-        <!-- Attachment -->
-        <div class="flex items-center justify-between">
-            <div class="font-medium flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 70.865 70.865" enable-background="new 0 0 70.865 70.865" id="圖層_1" version="1.1" xml:space="preserve">
-                    <g>
-                    <polygon fill="#FFFFFF" points="   34.033,41.546 18.565,29.495 6.38,38.364 6.38,13.888 64.485,13.888 64.485,52.296 43.565,32.013  " stroke="#040000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4"/>
-                    <polygon fill="#FFFFFF" points="   18.565,29.495 34.033,41.546 43.565,32.013 64.485,52.296 64.485,56.978 6.38,56.978 6.38,38.364  " stroke="#040000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4"/>
-                    <circle cx="32.696" cy="24.177" fill="#FFFFFF" r="4.047" stroke="#040000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4"/>
-                    </g>
-                </svg>
-                Attachments
-            </div>
-            <div class="hover:cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
-                    <g id="Edit / Add_Plus">
-                    <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg px-4 py-2 my-2">
-            <div class="font-medium mb-2">
-                IMG012021.PNG
-            </div>
-            <button class="flex w-28 h-6 my-2 items-center justify-center border rounded bg-violet-50 border-violet-200 px-2">
-                <p class="font-medium text-sm">
-                    Photo Sample
-                </p>
-            </button>
-            <div class="text-sm text-gray-500">
-                Uploaded 12h ago by Namrata Mahawer
-            </div>
-        </div>
-        <!-- Reviews -->
-        <div class="flex items-center justify-between mt-4">
-            <div class="font-medium flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 12H21M19 7.5V7.3125C19 4.93077 17.0692 3 14.6875 3H9.5C7.01472 3 5 5.01472 5 7.5C5 9.98528 7.01472 12 9.5 12H14.5C16.9853 12 19 14.0147 19 16.5C19 18.9853 16.9853 21 14.5 21H9.40625C6.97274 21 5 19.0273 5 16.5938V16.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Reviews
-            </div>
-            <div class="hover:cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
-                    <g id="Edit / Add_Plus">
-                    <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg px-4 py-2 my-2">
-            <div class="font-medium">
-                Garment review
-            </div>
-            <div class="text-sm text-gray-500 flex items-center my-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1 text-orange-500" viewBox="0 0 24 24" fill="none">
-                    <path d="M13.0867 21.3877L13.7321 21.7697L13.0867 21.3877ZM13.6288 20.4718L12.9833 20.0898L13.6288 20.4718ZM10.3712 20.4718L9.72579 20.8539H9.72579L10.3712 20.4718ZM10.9133 21.3877L11.5587 21.0057L10.9133 21.3877ZM1.25 10.5C1.25 10.9142 1.58579 11.25 2 11.25C2.41421 11.25 2.75 10.9142 2.75 10.5H1.25ZM3.07351 15.6264C2.915 15.2437 2.47627 15.062 2.09359 15.2205C1.71091 15.379 1.52918 15.8177 1.68769 16.2004L3.07351 15.6264ZM7.78958 18.9915L7.77666 19.7413L7.78958 18.9915ZM5.08658 18.6194L4.79957 19.3123H4.79957L5.08658 18.6194ZM21.6194 15.9134L22.3123 16.2004V16.2004L21.6194 15.9134ZM16.2104 18.9915L16.1975 18.2416L16.2104 18.9915ZM18.9134 18.6194L19.2004 19.3123H19.2004L18.9134 18.6194ZM19.6125 2.7368L19.2206 3.37628L19.6125 2.7368ZM21.2632 4.38751L21.9027 3.99563V3.99563L21.2632 4.38751ZM4.38751 2.7368L3.99563 2.09732V2.09732L4.38751 2.7368ZM2.7368 4.38751L2.09732 3.99563H2.09732L2.7368 4.38751ZM9.40279 19.2098L9.77986 18.5615L9.77986 18.5615L9.40279 19.2098ZM13.7321 21.7697L14.2742 20.8539L12.9833 20.0898L12.4412 21.0057L13.7321 21.7697ZM9.72579 20.8539L10.2679 21.7697L11.5587 21.0057L11.0166 20.0898L9.72579 20.8539ZM12.4412 21.0057C12.2485 21.3313 11.7515 21.3313 11.5587 21.0057L10.2679 21.7697C11.0415 23.0767 12.9585 23.0767 13.7321 21.7697L12.4412 21.0057ZM10.5 2.75H13.5V1.25H10.5V2.75ZM21.25 10.5V11.5H22.75V10.5H21.25ZM7.8025 18.2416C6.54706 18.2199 5.88923 18.1401 5.37359 17.9265L4.79957 19.3123C5.60454 19.6457 6.52138 19.7197 7.77666 19.7413L7.8025 18.2416ZM1.68769 16.2004C2.27128 17.6093 3.39066 18.7287 4.79957 19.3123L5.3736 17.9265C4.33223 17.4951 3.50486 16.6678 3.07351 15.6264L1.68769 16.2004ZM21.25 11.5C21.25 12.6751 21.2496 13.5189 21.2042 14.1847C21.1592 14.8438 21.0726 15.2736 20.9265 15.6264L22.3123 16.2004C22.5468 15.6344 22.6505 15.0223 22.7007 14.2868C22.7504 13.5581 22.75 12.6546 22.75 11.5H21.25ZM16.2233 19.7413C17.4786 19.7197 18.3955 19.6457 19.2004 19.3123L18.6264 17.9265C18.1108 18.1401 17.4529 18.2199 16.1975 18.2416L16.2233 19.7413ZM20.9265 15.6264C20.4951 16.6678 19.6678 17.4951 18.6264 17.9265L19.2004 19.3123C20.6093 18.7287 21.7287 17.6093 22.3123 16.2004L20.9265 15.6264ZM13.5 2.75C15.1512 2.75 16.337 2.75079 17.2619 2.83873C18.1757 2.92561 18.7571 3.09223 19.2206 3.37628L20.0044 2.09732C19.2655 1.64457 18.4274 1.44279 17.4039 1.34547C16.3915 1.24921 15.1222 1.25 13.5 1.25V2.75ZM22.75 10.5C22.75 8.87781 22.7508 7.6085 22.6545 6.59611C22.5572 5.57256 22.3554 4.73445 21.9027 3.99563L20.6237 4.77938C20.9078 5.24291 21.0744 5.82434 21.1613 6.73809C21.2492 7.663 21.25 8.84876 21.25 10.5H22.75ZM19.2206 3.37628C19.7925 3.72672 20.2733 4.20752 20.6237 4.77938L21.9027 3.99563C21.4286 3.22194 20.7781 2.57144 20.0044 2.09732L19.2206 3.37628ZM10.5 1.25C8.87781 1.25 7.6085 1.24921 6.59611 1.34547C5.57256 1.44279 4.73445 1.64457 3.99563 2.09732L4.77938 3.37628C5.24291 3.09223 5.82434 2.92561 6.73809 2.83873C7.663 2.75079 8.84876 2.75 10.5 2.75V1.25ZM2.75 10.5C2.75 8.84876 2.75079 7.663 2.83873 6.73809C2.92561 5.82434 3.09223 5.24291 3.37628 4.77938L2.09732 3.99563C1.64457 4.73445 1.44279 5.57256 1.34547 6.59611C1.24921 7.6085 1.25 8.87781 1.25 10.5H2.75ZM3.99563 2.09732C3.22194 2.57144 2.57144 3.22194 2.09732 3.99563L3.37628 4.77938C3.72672 4.20752 4.20752 3.72672 4.77938 3.37628L3.99563 2.09732ZM11.0166 20.0898C10.8136 19.7468 10.6354 19.4441 10.4621 19.2063C10.2795 18.9559 10.0702 18.7304 9.77986 18.5615L9.02572 19.8582C9.07313 19.8857 9.13772 19.936 9.24985 20.0898C9.37122 20.2564 9.50835 20.4865 9.72579 20.8539L11.0166 20.0898ZM7.77666 19.7413C8.21575 19.7489 8.49387 19.7545 8.70588 19.7779C8.90399 19.7999 8.98078 19.832 9.02572 19.8582L9.77986 18.5615C9.4871 18.3912 9.18246 18.3215 8.87097 18.287C8.57339 18.2541 8.21375 18.2487 7.8025 18.2416L7.77666 19.7413ZM14.2742 20.8539C14.4916 20.4865 14.6287 20.2564 14.7501 20.0898C14.8622 19.936 14.9268 19.8857 14.9742 19.8582L14.2201 18.5615C13.9298 18.7304 13.7204 18.9559 13.5379 19.2063C13.3646 19.4441 13.1864 19.7468 12.9833 20.0898L14.2742 20.8539ZM16.1975 18.2416C15.7862 18.2487 15.4266 18.2541 15.129 18.287C14.8175 18.3215 14.5129 18.3912 14.2201 18.5615L14.9742 19.8582C15.0192 19.832 15.096 19.7999 15.2941 19.7779C15.5061 19.7545 15.7842 19.7489 16.2233 19.7413L16.1975 18.2416Z" fill="currentColor"/>
-                </svg>
-                unresolved comments
-            </div>
-            <div class="flex my-2">
-                <div>
-                    <img class="w-14 h-14 rounded-lg mr-2" src="icons/1.jpg" alt="">
+    <div style="width: 300px; height: 800px;" class=" custom-scrollbar overflow-auto border border-l-0 rounded-r-lg py-6 px-4 bg-gray-100 border-gray-200">
+        <div style=" height: 800px;" class="">
+            <!-- Attachment -->
+            <div class="flex items-center justify-between">
+                <div class="font-medium flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1 text-gray-500" viewBox="0 0 70.865 70.865" enable-background="new 0 0 70.865 70.865" id="圖層_1" version="1.1" xml:space="preserve">
+                        <g>
+                        <polygon fill="#FFFFFF" points="   34.033,41.546 18.565,29.495 6.38,38.364 6.38,13.888 64.485,13.888 64.485,52.296 43.565,32.013  " stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4"/>
+                        <polygon fill="#FFFFFF" points="   18.565,29.495 34.033,41.546 43.565,32.013 64.485,52.296 64.485,56.978 6.38,56.978 6.38,38.364  " stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4"/>
+                        <circle cx="32.696" cy="24.177" fill="#FFFFFF" r="4.047" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4"/>
+                        </g>
+                    </svg>
+                    Attachments
                 </div>
-                <div>
-                    <img class="w-14 h-14 rounded-lg mr-2" src="icons/2.jpg" alt="">
-                </div>
-                <div>
-                    <img class="w-14 h-14 rounded-lg mr-2" src="icons/3.jpg" alt="">
-                </div>
-                <div>
-                    <button class="w-14 h-14 border rounded-lg text-gray-400 border-gray-200">+3</button>
+                <div class="hover:cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
+                        <g id="Edit / Add_Plus">
+                        <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
                 </div>
             </div>
-            <div class="text-gray-500">
-                Added 4d ago by Kathalen Marrlow
+            <div class="bg-white rounded-lg px-4 py-3 my-2">
+                <div class="font-medium mb-2">
+                    IMG012021.PNG
+                </div>
+                <button class="flex w-28 h-6 my-2 items-center justify-center border rounded bg-violet-50 border-violet-200 px-2">
+                    <p class="font-medium text-sm">
+                        Photo Sample
+                    </p>
+                </button>
+                <div class="text-sm text-gray-500">
+                    Uploaded 12h ago by Namrata Mahawer
+                </div>
             </div>
-        </div>
-        <!-- Shipments -->
-        <div class="flex items-center justify-between mt-4">
-            <div class="font-medium flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.52832 16.826C8.53464 17.7132 8.01843 18.5166 7.22106 18.8607C6.42369 19.2047 5.50274 19.0213 4.88882 18.3962C4.27491 17.7712 4.08935 16.828 4.41891 16.0077C4.74847 15.1873 5.52803 14.652 6.39307 14.652C6.95731 14.6499 7.49925 14.8777 7.89969 15.2854C8.30013 15.6931 8.52625 16.2473 8.52832 16.826V16.826Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7015 16.826C18.7078 17.7132 18.1916 18.5166 17.3942 18.8607C16.5969 19.2047 15.6759 19.0213 15.062 18.3962C14.4481 17.7712 14.2625 16.828 14.5921 16.0077C14.9216 15.1873 15.7012 14.652 16.5662 14.652C17.1305 14.6499 17.6724 14.8777 18.0728 15.2854C18.4733 15.6931 18.6994 16.2473 18.7015 16.826Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M14.1804 17.576C14.5946 17.576 14.9304 17.2403 14.9304 16.826C14.9304 16.4118 14.5946 16.076 14.1804 16.076V17.576ZM8.5254 16.076C8.11119 16.076 7.7754 16.4118 7.7754 16.826C7.7754 17.2403 8.11119 17.576 8.5254 17.576V16.076ZM13.4304 16.826C13.4304 17.2403 13.7662 17.576 14.1804 17.576C14.5946 17.576 14.9304 17.2403 14.9304 16.826H13.4304ZM14.9304 11.559C14.9304 11.1448 14.5946 10.809 14.1804 10.809C13.7662 10.809 13.4304 11.1448 13.4304 11.559H14.9304ZM14.1804 16.076C13.7662 16.076 13.4304 16.4118 13.4304 16.826C13.4304 17.2403 13.7662 17.576 14.1804 17.576V16.076ZM14.43 17.576C14.8442 17.576 15.18 17.2403 15.18 16.826C15.18 16.4118 14.8442 16.076 14.43 16.076V17.576ZM18.6972 16.0761C18.283 16.0779 17.9487 16.4151 17.9505 16.8293C17.9523 17.2435 18.2896 17.5779 18.7038 17.576L18.6972 16.0761ZM20.9625 14.485L21.7125 14.4816C21.7123 14.4384 21.7084 14.3954 21.7008 14.3529L20.9625 14.485ZM21.1772 11.4269C21.1042 11.0192 20.7146 10.7478 20.3068 10.8208C19.8991 10.8937 19.6277 11.2834 19.7007 11.6912L21.1772 11.4269ZM14.1794 6.12705C13.7652 6.12705 13.4294 6.46283 13.4294 6.87705C13.4294 7.29126 13.7652 7.62705 14.1794 7.62705V6.12705ZM17.7587 6.87705V7.62705C17.7637 7.62705 17.7688 7.627 17.7739 7.62689L17.7587 6.87705ZM19.3783 7.55055L19.9178 7.02951L19.9178 7.02951L19.3783 7.55055ZM20.0197 9.21805L19.27 9.19669C19.2685 9.24804 19.2723 9.2994 19.2814 9.34996L20.0197 9.21805ZM19.6996 11.691C19.7725 12.0987 20.1621 12.3702 20.5699 12.2974C20.9776 12.2245 21.2491 11.8349 21.1763 11.4271L19.6996 11.691ZM14.9284 6.87705C14.9284 6.46283 14.5927 6.12705 14.1784 6.12705C13.7642 6.12705 13.4284 6.46283 13.4284 6.87705H14.9284ZM13.4284 11.559C13.4284 11.9733 13.7642 12.309 14.1784 12.309C14.5927 12.309 14.9284 11.9733 14.9284 11.559H13.4284ZM13.4284 6.87705C13.4284 7.29126 13.7642 7.62705 14.1784 7.62705C14.5927 7.62705 14.9284 7.29126 14.9284 6.87705H13.4284ZM14.1784 6.07705L14.9285 6.07705L14.9284 6.07167L14.1784 6.07705ZM13.1137 5.00005L13.1137 5.75006L13.1187 5.75003L13.1137 5.00005ZM3.50512 5.00005L3.498 5.75005H3.50512V5.00005ZM2.75423 5.31075L2.22207 4.78225L2.22207 4.78225L2.75423 5.31075ZM2.4375 6.07505L1.6875 6.06834V6.07505H2.4375ZM2.4375 15.75L1.68747 15.75L1.68753 15.7568L2.4375 15.75ZM2.75423 16.5143L3.28638 15.9858L3.28638 15.9858L2.75423 16.5143ZM3.50512 16.825L3.50512 16.075L3.498 16.0751L3.50512 16.825ZM4.25783 17.575C4.67204 17.575 5.00783 17.2393 5.00783 16.825C5.00783 16.4108 4.67204 16.075 4.25783 16.075V17.575ZM14.1804 10.809C13.7662 10.809 13.4304 11.1448 13.4304 11.559C13.4304 11.9733 13.7662 12.309 14.1804 12.309V10.809ZM20.4399 12.309C20.8541 12.309 21.1899 11.9733 21.1899 11.559C21.1899 11.1448 20.8541 10.809 20.4399 10.809V12.309ZM14.1804 16.076H8.5254V17.576H14.1804V16.076ZM14.9304 16.826V11.559H13.4304V16.826H14.9304ZM14.1804 17.576H14.43V16.076H14.1804V17.576ZM18.7038 17.576C19.5117 17.5725 20.281 17.2397 20.8437 16.6573L19.765 15.615C19.4792 15.9108 19.0947 16.0743 18.6972 16.0761L18.7038 17.576ZM20.8437 16.6573C21.4058 16.0756 21.7162 15.2926 21.7125 14.4816L20.2125 14.4885C20.2145 14.9137 20.0514 15.3186 19.765 15.615L20.8437 16.6573ZM21.7008 14.3529L21.1772 11.4269L19.7007 11.6912L20.2242 14.6172L21.7008 14.3529ZM14.1794 7.62705H17.7587V6.12705H14.1794V7.62705ZM17.7739 7.62689C18.1691 7.61888 18.5544 7.7771 18.8389 8.07158L19.9178 7.02951C19.3477 6.43922 18.5622 6.1106 17.7434 6.1272L17.7739 7.62689ZM18.8389 8.07158C19.124 8.36679 19.282 8.77315 19.27 9.19669L20.7694 9.2394C20.7928 8.41808 20.4872 7.61907 19.9178 7.02951L18.8389 8.07158ZM19.2814 9.34996L19.6996 11.691L21.1763 11.4271L20.758 9.08613L19.2814 9.34996ZM13.4284 6.87705V11.559H14.9284V6.87705H13.4284ZM14.9284 6.87705V6.07705H13.4284V6.87705H14.9284ZM14.9284 6.07167C14.9213 5.07677 14.1245 4.24331 13.1088 4.25006L13.1187 5.75003C13.2708 5.74902 13.427 5.87963 13.4285 6.08242L14.9284 6.07167ZM13.1137 4.25005H3.50512V5.75005H13.1137V4.25005ZM3.51225 4.25008C3.02654 4.24547 2.5628 4.43917 2.22207 4.78225L3.28638 5.83925C3.3461 5.77912 3.42257 5.7493 3.498 5.75001L3.51225 4.25008ZM2.22207 4.78225C1.88199 5.12468 1.69183 5.58769 1.68753 6.06834L3.18747 6.08175C3.18832 5.98687 3.22602 5.90003 3.28638 5.83925L2.22207 4.78225ZM1.6875 6.07505V15.75H3.1875V6.07505H1.6875ZM1.68753 15.7568C1.69183 16.2374 1.88199 16.7004 2.22207 17.0428L3.28638 15.9858C3.22602 15.9251 3.18832 15.8382 3.18747 15.7433L1.68753 15.7568ZM2.22207 17.0428C2.5628 17.3859 3.02654 17.5796 3.51225 17.575L3.498 16.0751C3.42257 16.0758 3.3461 16.046 3.28638 15.9858L2.22207 17.0428ZM3.50512 17.575H4.25783V16.075H3.50512V17.575ZM14.1804 12.309H20.4399V10.809H14.1804V12.309Z" fill="#000000"/>
-                </svg>
-                Shipments
+            <!-- Reviews -->
+            <div class="flex items-center justify-between mt-4">
+                <div class="font-medium flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1 text-gray-500" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 12H21M19 7.5V7.3125C19 4.93077 17.0692 3 14.6875 3H9.5C7.01472 3 5 5.01472 5 7.5C5 9.98528 7.01472 12 9.5 12H14.5C16.9853 12 19 14.0147 19 16.5C19 18.9853 16.9853 21 14.5 21H9.40625C6.97274 21 5 19.0273 5 16.5938V16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Reviews
+                </div>
+                <div class="hover:cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
+                        <g id="Edit / Add_Plus">
+                        <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                </div>
             </div>
-            <div class="hover:cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
-                    <g id="Edit / Add_Plus">
-                    <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="bg-white rounded-lg px-4 py-2 my-2">
-            <div class="font-medium">MEDUSGNM965851</div>
-            <div class="flex my-2">
-                <div class="mr-14 mb-2">
-                    <div class="text-sm text-gray-500">
-                        ORIGIN
+            <div class="bg-white rounded-lg px-4 py-3 my-2">
+                <div class="font-medium">
+                    Garment review
+                </div>
+                <div class="text-sm text-gray-500 flex items-center mt-2 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1 text-orange-500" viewBox="0 0 24 24" fill="none">
+                        <path d="M13.0867 21.3877L13.7321 21.7697L13.0867 21.3877ZM13.6288 20.4718L12.9833 20.0898L13.6288 20.4718ZM10.3712 20.4718L9.72579 20.8539H9.72579L10.3712 20.4718ZM10.9133 21.3877L11.5587 21.0057L10.9133 21.3877ZM1.25 10.5C1.25 10.9142 1.58579 11.25 2 11.25C2.41421 11.25 2.75 10.9142 2.75 10.5H1.25ZM3.07351 15.6264C2.915 15.2437 2.47627 15.062 2.09359 15.2205C1.71091 15.379 1.52918 15.8177 1.68769 16.2004L3.07351 15.6264ZM7.78958 18.9915L7.77666 19.7413L7.78958 18.9915ZM5.08658 18.6194L4.79957 19.3123H4.79957L5.08658 18.6194ZM21.6194 15.9134L22.3123 16.2004V16.2004L21.6194 15.9134ZM16.2104 18.9915L16.1975 18.2416L16.2104 18.9915ZM18.9134 18.6194L19.2004 19.3123H19.2004L18.9134 18.6194ZM19.6125 2.7368L19.2206 3.37628L19.6125 2.7368ZM21.2632 4.38751L21.9027 3.99563V3.99563L21.2632 4.38751ZM4.38751 2.7368L3.99563 2.09732V2.09732L4.38751 2.7368ZM2.7368 4.38751L2.09732 3.99563H2.09732L2.7368 4.38751ZM9.40279 19.2098L9.77986 18.5615L9.77986 18.5615L9.40279 19.2098ZM13.7321 21.7697L14.2742 20.8539L12.9833 20.0898L12.4412 21.0057L13.7321 21.7697ZM9.72579 20.8539L10.2679 21.7697L11.5587 21.0057L11.0166 20.0898L9.72579 20.8539ZM12.4412 21.0057C12.2485 21.3313 11.7515 21.3313 11.5587 21.0057L10.2679 21.7697C11.0415 23.0767 12.9585 23.0767 13.7321 21.7697L12.4412 21.0057ZM10.5 2.75H13.5V1.25H10.5V2.75ZM21.25 10.5V11.5H22.75V10.5H21.25ZM7.8025 18.2416C6.54706 18.2199 5.88923 18.1401 5.37359 17.9265L4.79957 19.3123C5.60454 19.6457 6.52138 19.7197 7.77666 19.7413L7.8025 18.2416ZM1.68769 16.2004C2.27128 17.6093 3.39066 18.7287 4.79957 19.3123L5.3736 17.9265C4.33223 17.4951 3.50486 16.6678 3.07351 15.6264L1.68769 16.2004ZM21.25 11.5C21.25 12.6751 21.2496 13.5189 21.2042 14.1847C21.1592 14.8438 21.0726 15.2736 20.9265 15.6264L22.3123 16.2004C22.5468 15.6344 22.6505 15.0223 22.7007 14.2868C22.7504 13.5581 22.75 12.6546 22.75 11.5H21.25ZM16.2233 19.7413C17.4786 19.7197 18.3955 19.6457 19.2004 19.3123L18.6264 17.9265C18.1108 18.1401 17.4529 18.2199 16.1975 18.2416L16.2233 19.7413ZM20.9265 15.6264C20.4951 16.6678 19.6678 17.4951 18.6264 17.9265L19.2004 19.3123C20.6093 18.7287 21.7287 17.6093 22.3123 16.2004L20.9265 15.6264ZM13.5 2.75C15.1512 2.75 16.337 2.75079 17.2619 2.83873C18.1757 2.92561 18.7571 3.09223 19.2206 3.37628L20.0044 2.09732C19.2655 1.64457 18.4274 1.44279 17.4039 1.34547C16.3915 1.24921 15.1222 1.25 13.5 1.25V2.75ZM22.75 10.5C22.75 8.87781 22.7508 7.6085 22.6545 6.59611C22.5572 5.57256 22.3554 4.73445 21.9027 3.99563L20.6237 4.77938C20.9078 5.24291 21.0744 5.82434 21.1613 6.73809C21.2492 7.663 21.25 8.84876 21.25 10.5H22.75ZM19.2206 3.37628C19.7925 3.72672 20.2733 4.20752 20.6237 4.77938L21.9027 3.99563C21.4286 3.22194 20.7781 2.57144 20.0044 2.09732L19.2206 3.37628ZM10.5 1.25C8.87781 1.25 7.6085 1.24921 6.59611 1.34547C5.57256 1.44279 4.73445 1.64457 3.99563 2.09732L4.77938 3.37628C5.24291 3.09223 5.82434 2.92561 6.73809 2.83873C7.663 2.75079 8.84876 2.75 10.5 2.75V1.25ZM2.75 10.5C2.75 8.84876 2.75079 7.663 2.83873 6.73809C2.92561 5.82434 3.09223 5.24291 3.37628 4.77938L2.09732 3.99563C1.64457 4.73445 1.44279 5.57256 1.34547 6.59611C1.24921 7.6085 1.25 8.87781 1.25 10.5H2.75ZM3.99563 2.09732C3.22194 2.57144 2.57144 3.22194 2.09732 3.99563L3.37628 4.77938C3.72672 4.20752 4.20752 3.72672 4.77938 3.37628L3.99563 2.09732ZM11.0166 20.0898C10.8136 19.7468 10.6354 19.4441 10.4621 19.2063C10.2795 18.9559 10.0702 18.7304 9.77986 18.5615L9.02572 19.8582C9.07313 19.8857 9.13772 19.936 9.24985 20.0898C9.37122 20.2564 9.50835 20.4865 9.72579 20.8539L11.0166 20.0898ZM7.77666 19.7413C8.21575 19.7489 8.49387 19.7545 8.70588 19.7779C8.90399 19.7999 8.98078 19.832 9.02572 19.8582L9.77986 18.5615C9.4871 18.3912 9.18246 18.3215 8.87097 18.287C8.57339 18.2541 8.21375 18.2487 7.8025 18.2416L7.77666 19.7413ZM14.2742 20.8539C14.4916 20.4865 14.6287 20.2564 14.7501 20.0898C14.8622 19.936 14.9268 19.8857 14.9742 19.8582L14.2201 18.5615C13.9298 18.7304 13.7204 18.9559 13.5379 19.2063C13.3646 19.4441 13.1864 19.7468 12.9833 20.0898L14.2742 20.8539ZM16.1975 18.2416C15.7862 18.2487 15.4266 18.2541 15.129 18.287C14.8175 18.3215 14.5129 18.3912 14.2201 18.5615L14.9742 19.8582C15.0192 19.832 15.096 19.7999 15.2941 19.7779C15.5061 19.7545 15.7842 19.7489 16.2233 19.7413L16.1975 18.2416Z" fill="currentColor"/>
+                    </svg>
+                    unresolved comments
+                </div>
+                <div class="flex my-2">
+                    <div>
+                        <img class="w-14 h-14 rounded-lg mr-2" src="icons/1.jpg" alt="">
                     </div>
-                    <div class="font-medium text-sm">
-                        Guangzhou
+                    <div>
+                        <img class="w-14 h-14 rounded-lg mr-2" src="icons/2.jpg" alt="">
+                    </div>
+                    <div>
+                        <img class="w-14 h-14 rounded-lg mr-2" src="icons/3.jpg" alt="">
+                    </div>
+                    <div>
+                        <button class="w-14 h-14 border rounded-lg text-gray-400 border-gray-200">+3</button>
                     </div>
                 </div>
-                <div>
+                <div class="text-gray-500 text-sm">
+                    Added 4d ago by Kathalen Marrlow
+                </div>
+            </div>
+            <!-- Shipments -->
+            <div class="flex items-center justify-between mt-4">
+                <div class="font-medium flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1 text-gray-500" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.52832 16.826C8.53464 17.7132 8.01843 18.5166 7.22106 18.8607C6.42369 19.2047 5.50274 19.0213 4.88882 18.3962C4.27491 17.7712 4.08935 16.828 4.41891 16.0077C4.74847 15.1873 5.52803 14.652 6.39307 14.652C6.95731 14.6499 7.49925 14.8777 7.89969 15.2854C8.30013 15.6931 8.52625 16.2473 8.52832 16.826V16.826Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7015 16.826C18.7078 17.7132 18.1916 18.5166 17.3942 18.8607C16.5969 19.2047 15.6759 19.0213 15.062 18.3962C14.4481 17.7712 14.2625 16.828 14.5921 16.0077C14.9216 15.1873 15.7012 14.652 16.5662 14.652C17.1305 14.6499 17.6724 14.8777 18.0728 15.2854C18.4733 15.6931 18.6994 16.2473 18.7015 16.826Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.1804 17.576C14.5946 17.576 14.9304 17.2403 14.9304 16.826C14.9304 16.4118 14.5946 16.076 14.1804 16.076V17.576ZM8.5254 16.076C8.11119 16.076 7.7754 16.4118 7.7754 16.826C7.7754 17.2403 8.11119 17.576 8.5254 17.576V16.076ZM13.4304 16.826C13.4304 17.2403 13.7662 17.576 14.1804 17.576C14.5946 17.576 14.9304 17.2403 14.9304 16.826H13.4304ZM14.9304 11.559C14.9304 11.1448 14.5946 10.809 14.1804 10.809C13.7662 10.809 13.4304 11.1448 13.4304 11.559H14.9304ZM14.1804 16.076C13.7662 16.076 13.4304 16.4118 13.4304 16.826C13.4304 17.2403 13.7662 17.576 14.1804 17.576V16.076ZM14.43 17.576C14.8442 17.576 15.18 17.2403 15.18 16.826C15.18 16.4118 14.8442 16.076 14.43 16.076V17.576ZM18.6972 16.0761C18.283 16.0779 17.9487 16.4151 17.9505 16.8293C17.9523 17.2435 18.2896 17.5779 18.7038 17.576L18.6972 16.0761ZM20.9625 14.485L21.7125 14.4816C21.7123 14.4384 21.7084 14.3954 21.7008 14.3529L20.9625 14.485ZM21.1772 11.4269C21.1042 11.0192 20.7146 10.7478 20.3068 10.8208C19.8991 10.8937 19.6277 11.2834 19.7007 11.6912L21.1772 11.4269ZM14.1794 6.12705C13.7652 6.12705 13.4294 6.46283 13.4294 6.87705C13.4294 7.29126 13.7652 7.62705 14.1794 7.62705V6.12705ZM17.7587 6.87705V7.62705C17.7637 7.62705 17.7688 7.627 17.7739 7.62689L17.7587 6.87705ZM19.3783 7.55055L19.9178 7.02951L19.9178 7.02951L19.3783 7.55055ZM20.0197 9.21805L19.27 9.19669C19.2685 9.24804 19.2723 9.2994 19.2814 9.34996L20.0197 9.21805ZM19.6996 11.691C19.7725 12.0987 20.1621 12.3702 20.5699 12.2974C20.9776 12.2245 21.2491 11.8349 21.1763 11.4271L19.6996 11.691ZM14.9284 6.87705C14.9284 6.46283 14.5927 6.12705 14.1784 6.12705C13.7642 6.12705 13.4284 6.46283 13.4284 6.87705H14.9284ZM13.4284 11.559C13.4284 11.9733 13.7642 12.309 14.1784 12.309C14.5927 12.309 14.9284 11.9733 14.9284 11.559H13.4284ZM13.4284 6.87705C13.4284 7.29126 13.7642 7.62705 14.1784 7.62705C14.5927 7.62705 14.9284 7.29126 14.9284 6.87705H13.4284ZM14.1784 6.07705L14.9285 6.07705L14.9284 6.07167L14.1784 6.07705ZM13.1137 5.00005L13.1137 5.75006L13.1187 5.75003L13.1137 5.00005ZM3.50512 5.00005L3.498 5.75005H3.50512V5.00005ZM2.75423 5.31075L2.22207 4.78225L2.22207 4.78225L2.75423 5.31075ZM2.4375 6.07505L1.6875 6.06834V6.07505H2.4375ZM2.4375 15.75L1.68747 15.75L1.68753 15.7568L2.4375 15.75ZM2.75423 16.5143L3.28638 15.9858L3.28638 15.9858L2.75423 16.5143ZM3.50512 16.825L3.50512 16.075L3.498 16.0751L3.50512 16.825ZM4.25783 17.575C4.67204 17.575 5.00783 17.2393 5.00783 16.825C5.00783 16.4108 4.67204 16.075 4.25783 16.075V17.575ZM14.1804 10.809C13.7662 10.809 13.4304 11.1448 13.4304 11.559C13.4304 11.9733 13.7662 12.309 14.1804 12.309V10.809ZM20.4399 12.309C20.8541 12.309 21.1899 11.9733 21.1899 11.559C21.1899 11.1448 20.8541 10.809 20.4399 10.809V12.309ZM14.1804 16.076H8.5254V17.576H14.1804V16.076ZM14.9304 16.826V11.559H13.4304V16.826H14.9304ZM14.1804 17.576H14.43V16.076H14.1804V17.576ZM18.7038 17.576C19.5117 17.5725 20.281 17.2397 20.8437 16.6573L19.765 15.615C19.4792 15.9108 19.0947 16.0743 18.6972 16.0761L18.7038 17.576ZM20.8437 16.6573C21.4058 16.0756 21.7162 15.2926 21.7125 14.4816L20.2125 14.4885C20.2145 14.9137 20.0514 15.3186 19.765 15.615L20.8437 16.6573ZM21.7008 14.3529L21.1772 11.4269L19.7007 11.6912L20.2242 14.6172L21.7008 14.3529ZM14.1794 7.62705H17.7587V6.12705H14.1794V7.62705ZM17.7739 7.62689C18.1691 7.61888 18.5544 7.7771 18.8389 8.07158L19.9178 7.02951C19.3477 6.43922 18.5622 6.1106 17.7434 6.1272L17.7739 7.62689ZM18.8389 8.07158C19.124 8.36679 19.282 8.77315 19.27 9.19669L20.7694 9.2394C20.7928 8.41808 20.4872 7.61907 19.9178 7.02951L18.8389 8.07158ZM19.2814 9.34996L19.6996 11.691L21.1763 11.4271L20.758 9.08613L19.2814 9.34996ZM13.4284 6.87705V11.559H14.9284V6.87705H13.4284ZM14.9284 6.87705V6.07705H13.4284V6.87705H14.9284ZM14.9284 6.07167C14.9213 5.07677 14.1245 4.24331 13.1088 4.25006L13.1187 5.75003C13.2708 5.74902 13.427 5.87963 13.4285 6.08242L14.9284 6.07167ZM13.1137 4.25005H3.50512V5.75005H13.1137V4.25005ZM3.51225 4.25008C3.02654 4.24547 2.5628 4.43917 2.22207 4.78225L3.28638 5.83925C3.3461 5.77912 3.42257 5.7493 3.498 5.75001L3.51225 4.25008ZM2.22207 4.78225C1.88199 5.12468 1.69183 5.58769 1.68753 6.06834L3.18747 6.08175C3.18832 5.98687 3.22602 5.90003 3.28638 5.83925L2.22207 4.78225ZM1.6875 6.07505V15.75H3.1875V6.07505H1.6875ZM1.68753 15.7568C1.69183 16.2374 1.88199 16.7004 2.22207 17.0428L3.28638 15.9858C3.22602 15.9251 3.18832 15.8382 3.18747 15.7433L1.68753 15.7568ZM2.22207 17.0428C2.5628 17.3859 3.02654 17.5796 3.51225 17.575L3.498 16.0751C3.42257 16.0758 3.3461 16.046 3.28638 15.9858L2.22207 17.0428ZM3.50512 17.575H4.25783V16.075H3.50512V17.575ZM14.1804 12.309H20.4399V10.809H14.1804V12.309Z" fill="currentColor"/>
+                    </svg>
+                    Shipments
+                </div>
+                <div class="hover:cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="none">
+                        <g id="Edit / Add_Plus">
+                        <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg px-4 py-3 my-2">
+                <div class="font-medium">MEDUSGNM965851</div>
+                <div class="flex my-2">
+                    <div class="mr-14 mb-2">
+                        <div class="text-sm text-gray-500">
+                            ORIGIN
+                        </div>
+                        <div class="font-medium text-sm">
+                            Guangzhou
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-gray-500">
+                            DESTINATION
+                        </div>
+                        <div class="font-medium  text-sm">
+                            Aveiro
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
                     <div class="text-sm text-gray-500">
-                        DESTINATION
+                        ETA
                     </div>
                     <div class="font-medium  text-sm">
-                        Aveiro
+                        22/08/2022
                     </div>
                 </div>
-            </div>
-            <div class="mb-3">
-                <div class="text-sm text-gray-500">
-                    ETA
+                <button class="flex w-28 h-7 my-2 items-center justify-center border rounded bg-blue-50 border-violet-200 px-2">
+                    <p class="font-medium text-sm ">
+                        In progress
+                    </p>
+                </button>
+                <div class=" text-gray-500 text-sm">
+                    Added 4d ago by Kathaleen Marriow
                 </div>
-                <div class="font-medium  text-sm">
-                    22/08/2022
-                </div>
-            </div>
-            <button class="flex w-28 h-7 my-2 items-center justify-center border rounded bg-blue-50 border-violet-200 px-2">
-                <p class="font-medium text-sm">
-                    In progress
-                </p>
-            </button>
-            <div class=" text-gray-500">
-                Added 4d ago by Kathaleen Marriow
             </div>
         </div>
     </div>
