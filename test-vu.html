@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример Vue.js</title>
+    <!-- Подключаем Vue.js через CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        * {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Используем директиву v-model для связи данных -->
+        <input type="text" v-model="message">
+        <p>{{ message }}</p> <!-- Отображаем данные из переменной message -->
+    </div>
+
+    <!-- Инициализация Vue.js и привязка к элементу #app -->
+    <script>
+        new Vue({
+            el: '#app', // Привязываем Vue к элементу с id="app"
+            data: {
+                message: 'Oleg' // Инициализируем переменную message
+            }
+        });
+    </script>
+    <div id="mail">
+        <input type="text" v-model="mail">
+        <p>{{ mail }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#mail',
+            data:{
+                mail: 'oleg.mail.ru'
+            }
+        });
+    </script>
+
+    <div id="app">
+        <div class="block items-center border w-full border-gray-200 rounded-lg p-2 mb-4">
+            <div class="flex items-center justify-between py-3">
+                <div class="flex items-center">
+                    <!-- Добавляем кнопку событиями и связываем её с данными в Vue.js -->
+                    <button class="inline-block w-5 h-5 mr-5 bg-white border border-gray-300 rounded cursor-pointer relative"
+                            @click="toggleStrikethrough"> <!-- Добавляем событие @click -->
+                    </button>
+                    <p class="flex items-center text-lg font-medium" :class="{ 'line-through': isStrikethrough }">Understanding client design brief</p> <!-- Применяем класс 'line-through' при условии -->
+                </div>
+            </div>
+            <p class="block items-center text-base max-w-xl w-auto h-auto ml-10 px-2 py-2 border border-gray-200 rounded bg-slate-100">
+                Blocker: The brief from client was not clear so it took time to understand it
+            </p>
+        </div>
+    </div>
+
+    <!-- Инициализация Vue.js и привязка к элементу #app -->
+    <script>
+        new Vue({
+            el: '#app', // Привязываем Vue к элементу с id="app"
+            data: {
+                isStrikethrough: false // Переменная для хранения состояния зачеркивания
+            },
+            methods: {
+                toggleStrikethrough() { // Метод для переключения состояния зачеркивания
+                    this.isStrikethrough = !this.isStrikethrough;
+                }
+            }
+        });
+    </script>
+
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+
+    <script>
+        var app5 = new Vue({
+            el: '#app-5',
+            data: {
+                message: 'астигматизм'
+            },  
+            methods: {
+                reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
